@@ -19,7 +19,6 @@ Future<Directions> getDirections(
   return await DirectionsRepository().get(
     origin: AddressPoint(lat: lat1, lng: lng1),
     destination: AddressPoint(lat: lat2, lng: lng2),
-    googleAPIKey: googleAPIKey ?? GoogleMapsDirections.googleApiKey,
     mode: mode,
     language: language,
   );

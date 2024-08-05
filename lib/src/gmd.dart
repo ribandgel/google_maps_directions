@@ -1,23 +1,35 @@
 import 'exceptions/exception.dart';
 
 class GoogleMapsDirections {
-  static String? _googleAPIKey;
+  static String? _backendAuthority;
+  static String? _backendPath;
 
-  static String get googleApiKey {
-    if (_googleAPIKey == null) {
+  static String get backendAuthority {
+    if (_backendAuthority == null) {
       throw DirectionsException(
-        status: "invalid-api-key",
-        message: "Invalid api key or not set",
+        status: "invalid-backendAuthority",
+        message: "Invalid backendAuthority or not set",
       );
     }
-    return _googleAPIKey!;
+    return _backendAuthority!;
+  }
+
+  static String get backendPath {
+    if (_backendPath == null) {
+      throw DirectionsException(
+        status: "invalid-backendAuthority",
+        message: "Invalid backendAuthority or not set",
+      );
+    }
+    return _backendPath!;
   }
 
   /// Initialize plugin.
-  /// [googleAPIKey] : Valid Google Maps Routes API Key.
   static void init({
-    required String googleAPIKey,
+    required String backendAuthority,
+    required String backendPath,
   }) {
-    _googleAPIKey = googleAPIKey;
+    _backendAuthority = backendAuthority;
+    _backendPath = backendPath;
   }
 }

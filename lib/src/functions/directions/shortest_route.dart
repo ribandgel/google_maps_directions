@@ -1,4 +1,3 @@
-import 'package:google_maps_directions/src/gmd.dart';
 import 'package:google_maps_directions/src/models/direction_route.dart';
 
 import 'get_directions.dart';
@@ -18,7 +17,7 @@ Future<DirectionRoute> shortestRoute(
     lng1,
     lat2,
     lng2,
-    googleAPIKey: googleAPIKey ?? GoogleMapsDirections.googleApiKey,
+    googleAPIKey: googleAPIKey,
   ))
       .shortestRoute;
 }
